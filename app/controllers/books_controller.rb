@@ -33,6 +33,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:image, :caption)
+    params.require(:book).permit(:title, :opinion)
   end
 end
