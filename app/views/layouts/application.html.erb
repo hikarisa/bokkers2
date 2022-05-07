@@ -23,7 +23,7 @@
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to "Home", homes_top_path, class: 'nav-link text-dark' %>
+              <%= link_to "Home", user_path(current_user.id), class: 'nav-link text-dark' %>
             </li>
             <li class="nav-item">
               <%= link_to "Users", users_path, class: 'nav-link text-dark' %>
@@ -53,45 +53,14 @@
         </div>
       </nav>
     </header>
+
     <main class="mb-auto">
-      <div class="container px-5 px-sm-0">
-        <div class="row">
-          <div class="col-md-3">
-            <h2>User info</h2>
-            <img src="">
-      <table class="table">
-        <tbody>
-          <tr>
-        	  <th>name</th>
-        	  <th></th>
-          </tr>
-          <tr>
-        	  <th>introduction</th>
-        	  <th></th>
-          </tr>
-        </tbody>
-      </table>
-      <div class="row">
-        <%= link_to "EDIT", edit_user_registration_path, class: "btn btn-secondary" %>
-      </div>
-      <h2 class="mt-3">New book</h2>
-      <%= form_with model: @book do |f| %>
-        <h4>Title</h4>
-          <%= f.text_field :title %>
-        <h4>Opinion</h4>
-          <%= f.text_area :opinion %>
-        <%= f.submit '投稿' %>
-      <% end %>
-      </div>
-      
-      
       <%= yield %>
     </main>
     <footer class="bg-dark text-white pt-5 pb-4">
       <div class="container">
         <div class="row no-gutters">
           <div class="col-md-4">
-
           </div>
           <div class="col-md-8">
             <h6 class="text-white mt-2 mb-3">CopyRight Infratop.inc</h6>
