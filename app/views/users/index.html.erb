@@ -1,35 +1,6 @@
+<p class="flash"><%=   flash[:notice]  %></p>
+<%= render 'layouts/sidemenu' %>
 <main>
-        <p class="flash"><%=   flash[:notice]  %></p>
-        <div class="container px-5 px-sm-0">
-  <div class="row">
-    <div class="col-md-3">
-      <h2>User info</h2>
-    
-            <table class="table">
-              <tbody>
-                <tr>
-              	  <th>name</th>
-              	  <th></th>
-                </tr>
-                <tr>
-              	  <th>introduction</th>
-              	  <th></th>
-                </tr>
-              </tbody>
-            </table>
-
-          <div class="row">
-            <%= link_to "EDIT", edit_user_path(current_user), class: "btn btn-secondary" %>
-          </div>
-        <h2 class="mt-3">New book</h2>
-        <%= form_with model: @book do |f| %>
-          <h4>Title</h4>
-            <%= f.text_field :title %>
-          <h4>Opinion</h4>
-            <%= f.text_area :opinion %>
-          <%= f.submit '投稿' %>
-        <% end %>
-    </div>
     <div class="col-md-8 offset-md-1">
       <h2>Users</h2>
       <table class="table">
@@ -41,11 +12,15 @@
     </tr>
   </thead>
   <tbody>
-      <tr>
-        <td><img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ2haIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c88879b160ea921a5459c6f7af3fe277d88b0525/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVZWcFZRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596aecbd1e45058af6bad2ccaa755120cd0daa59/default-image.jpg"></td>
-        <td>Lucas</td>
-        <td><a class="user_8187" href="/users/8187">Show</a></td>
-      </tr>
+       <% @users.each do |user| %>
+        <tr>
+          <td>
+            <a ><%= image_tag @user.get_profile_image(100,100) %></a>
+          </td>
+          <td><a><%= user.name %></a></td>
+          <td><%= link_to "show", user_path(user.id) %></td>
+        </tr>
+      <% end %>
   </tbody>
 </table>
 

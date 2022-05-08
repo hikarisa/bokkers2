@@ -1,7 +1,27 @@
-<div class="profile-container">
-  <h3 class="profile-name"><%= @user.name %></h3>
-  <%= image_tag @user.get_profile_image(100,100) %>
-  <% if @user.id == current_user.id %>
-  <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
-  <% end %>
-</div>
+<p class="flash"><%=   flash[:notice]  %></p>
+<%= render 'layouts/sidemenu' %>
+  <main>
+    <div class="col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <%= link_to "#{@user.name}", user_path %>
+            </td>
+            <td><%= link_to "#{@book.title}", book_path %></td>
+            <td><%= @book.body %></td>
+            <% if @user == current_user %>
+              <td><%= link_to "Edit", edit_book_path(@book) %></td>
+              <td><%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>

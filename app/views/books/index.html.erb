@@ -1,56 +1,29 @@
+<p class="flash"><%=   flash[:notice]  %></p>
+<%= render 'layouts/sidemenu' %>
 <main>
-        <p class="flash"><%=   flash[:notice]  %></p>
-        <div class="container px-5 px-sm-0">
-  <div class="row">
-    <div class="col-md-3">
-      <h2>User info</h2>
-
-            <table class="table">
-              <tbody>
-                <tr>
-              	  <th>name</th>
-              	  <th></th>
-                </tr>
-                <tr>
-              	  <th>introduction</th>
-              	  <th></th>
-                </tr>
-              </tbody>
-            </table>
-
-          <div class="row">
-            <%= link_to "EDIT", edit_user_path(current_user), class: "btn btn-secondary" %>
-          </div>
-        <h2 class="mt-3">New book</h2>
-        <%= form_with model: @book do |f| %>
-          <h4>Title</h4>
-            <%= f.text_field :title %>
-          <h4>Opinion</h4>
-            <%= f.text_area :opinion %>
-          <%= f.submit '投稿' %>
-        <% end %>
-    </div>
-    <div class="col-md-8 offset-md-1">
-      <h2>Users</h2>
-      <table class="table">
-  <thead>
-    <tr>
-      <th>image</th>
-      <th>name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><a href="/users/7274">
-          <img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbXhQIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1bbc446038ab958dd11d506a8b9cc9113d36bc35/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVZWcFZRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596aecbd1e45058af6bad2ccaa755120cd0daa59/default-image.jpg">
-            </a>
-        </td>
-        <td><a class="book_5401" href="/books/5401">リーダブルコード</a></td>
-        <td>より良いコードを書くためのシンプルで実践的なテクニック。</td>
-      </tr>
-  </tbody>
-</table>
+  <div class="col-md-8 offset-md-1">
+    <h2>Books</h2>
+    <table class="table table-hover table-inverse">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Title</th>
+          <th>Opinion</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+           <% @books.each do |book| %>
+            <tr>
+              <td>
+                <a href=user_path><%= image_tag @user.get_profile_image(100,100) %></a>
+              </td>
+              <td><%= link_to "#{book.title}", book_path(current_user) %></td>
+              <td><%= book.body %></td>
+            </tr>
+          <% end %>
+      </tbody>
+    </table>
     </div>
   </div>
 </div>
