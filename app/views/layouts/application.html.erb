@@ -27,32 +27,46 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
-            <li>
+            <li class="nav-item">
               <%= link_to user_path(@user) do %>
-                <i class="fa-solid fa-house-chimney", "nav-link text-dark">Home</i>
+                <p class="nav-link text-dark"><i class="fa-solid fa-house-chimney"></i>Home</p>
               <% end %>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" href="../users/"><i class="fa-solid fa-users"></i>Users</a>
+              <%= link_to users_path do %>
+                <p class="nav-link text-dark"><i class="fa-solid fa-users"></i>Users</p>
+              <% end %>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" href="../books/"><i class="fa-solid fa-book-open"></i>Books</a>
+              <%= link_to books_path do %>
+                <p class="nav-link text-dark"><i class="fa-solid fa-book-open"></i>Books</p>
+              <% end %>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" href="../users/sign_out"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
+              <%= link_to destroy_user_session_path do %>
+                <p class="nav-link text-dark"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</p>
+              <% end %>
             </li>
             <% else %>
             <li class="nav-item">
-              <a class="nav-link text-dark" href="../homes/top"><i class="fa-solid fa-house-chimney"></i>Home</a>
+              <%= link_to homes_top_path do %>
+                <p class="nav-link text-dark"><i class="fa-solid fa-house-chimney"></i>Home</p>
+              <% end %>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" href="../homes/about"><i class="fa-solid fa-link"></i>About</a>
+              <%= link_to about_path(@user) do %>
+                <p class="nav-link text-dark"><i class="fa-solid fa-link"></i>About</p>
+              <% end %>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" href="../users/sign_up"><i class="fa-solid fa-user-plus"></i>Sign up</a>
+              <%= link_to new_user_session_path(@user) do %>
+                <p class="nav-link text-dark"><i class="fa-solid fa-user-plus"></i>Sign up</p>
+              <% end %>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" href="../users/sign_in"><i class="fa-solid fa-right-to-bracket"></i>Log in</a>
+              <%= link_to user_session_path(@user) do %>
+                <p class="nav-link text-dark"><i class="fa-solid fa-right-to-bracket"></i>Log in</p>
+              <% end %>
             </li>
             <% end %>
             </ul>

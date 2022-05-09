@@ -4,10 +4,10 @@
   <%= f.text_field :title, autofocus: true %>
   <label for="inputImage">Opinion</label>
   <%= f.text_area :body %>
-  <%= f.submit "変更を保存" %>
+  <input type="submit" name="commit" value="Update Book" class="btn btn-success" data-disable-with="Update Book">
   <div>
-  <%= link_to "show", book_path(current_user) %>
+  <%= link_to "Show", book_path(@book.id) %>
   |
-  <%= link_to "back", books_path(@books) %>
+  <%= link_to "Back", books_path(@books) %>
   </div>
 <% end %>
