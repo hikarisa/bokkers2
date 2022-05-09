@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def show
     @user = User.find(params[:id])
     @books = @user.books
@@ -19,10 +20,9 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:notice] = 'Book was successfully edit.'
+      flash[:notice] = 'User was successfully edit.'
       redirect_to user_path(@user.id)
     else
-      flash.now[:alert] = "編集に失敗しました"
       render :edit
     end
   end

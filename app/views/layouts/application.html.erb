@@ -49,23 +49,23 @@
             </li>
             <% else %>
             <li class="nav-item">
-              <%= link_to homes_top_path do %>
-                <p class="nav-link text-dark"><i class="fa-solid fa-house-chimney"></i>Home</p>
+              <%= link_to root_path do %>
+                <p class="nav-link text-dark"><i class="fa-solid fa-house-chimney"></i> Home</p>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to about_path(@user) do %>
-                <p class="nav-link text-dark"><i class="fa-solid fa-link"></i>About</p>
+              <%= link_to homes_about_path do %>
+                <p class="nav-link text-dark"><i class="fa-solid fa-link"></i> About</p>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to new_user_session_path(@user) do %>
-                <p class="nav-link text-dark"><i class="fa-solid fa-user-plus"></i>Sign up</p>
+              <%= link_to new_user_registration_path do %>
+                <p class="nav-link text-dark"><i class="fa-solid fa-user-plus"></i> Sign up</p>
               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to user_session_path(@user) do %>
-                <p class="nav-link text-dark"><i class="fa-solid fa-right-to-bracket"></i>Log in</p>
+                <p class="nav-link text-dark"><i class="fa-solid fa-right-to-bracket"></i> Log in</p>
               <% end %>
             </li>
             <% end %>

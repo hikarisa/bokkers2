@@ -17,11 +17,11 @@
                 <%= @user.name %>
               <% end %>
             </td>
-            <td><%= link_to "#{@book.title}", book_path %></td>
-            <td><%= @book.body %></td>
+            <td><%= link_to "#{@books.title}", book_path %></td>
+            <td><%= @books.body %></td>
             <% if @user == current_user %>
-              <td><%= link_to "Edit", edit_book_path(@book) %></td>
-              <td><%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+              <td><%= link_to "Edit", edit_book_path(@books) %></td>
+              <td><%= link_to "Destroy", book_path(@books.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
             <% end %>
           </tr>
         </tbody>

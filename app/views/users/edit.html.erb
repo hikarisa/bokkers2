@@ -6,8 +6,8 @@
         <p class="error-message">・<%= message %></p>
       <% end %>
     </ul>
-  <% end %>
   </div>
+<% end %>
 <h2>User Info</h2>
 <%= form_with model: @user do |f| %>
   <label for="inputName">Name</label>
@@ -16,5 +16,5 @@
   <%= f.file_field :profile_image, accept: "image/*" %>  
   <label for="inputName">Introduction</label>
   <%= f.text_area :introduction %>
-  <%= f.submit "変更を保存" %>
+  <input type="submit" name="commit" value="Update User" class="btn btn-secondary" data-disable-with="Update User">
 <% end %>
