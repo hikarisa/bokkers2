@@ -29,43 +29,43 @@
             <% if user_signed_in? %>
             <li class="nav-item">
               <%= link_to user_path(@user) do %>
-                <p class="nav-link text-dark"><i class="fa-solid fa-house-chimney"></i>Home</p>
+                <p class="nav-link text-dark"><i class="fas fa-home"></i>Home</p>
               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to users_path do %>
-                <p class="nav-link text-dark"><i class="fa-solid fa-users"></i>Users</p>
+                <p class="nav-link text-dark"><i class="fas fa-users"></i>Users</p>
               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to books_path do %>
-                <p class="nav-link text-dark"><i class="fa-solid fa-book-open"></i>Books</p>
+                <p class="nav-link text-dark"><i class="fas fa-book-open"></i>Books</p>
               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to destroy_user_session_path do %>
-                <p class="nav-link text-dark"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</p>
+                <p class="nav-link text-dark"><i class="fas fa-sign-out-alt"></i>Log out</p>
               <% end %>
             </li>
             <% else %>
             <li class="nav-item">
               <%= link_to root_path do %>
-                <p class="nav-link text-dark"><i class="fa-solid fa-house-chimney"></i> Home</p>
+                <p class="nav-link text-dark"><i class="fas fa-home"></i> Home</p>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to homes_about_path do %>
-                <p class="nav-link text-dark"><i class="fa-solid fa-link"></i> About</p>
+              <%= link_to home_about_path do %>
+                <p class="nav-link text-dark"><i class="fas fa-link"></i> About</p>
               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to new_user_registration_path do %>
-                <p class="nav-link text-dark"><i class="fa-solid fa-user-plus"></i> Sign up</p>
+                <p class="nav-link text-dark"><i class="fas fa-user-plus"></i> Sign up</p>
               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to user_session_path(@user) do %>
-                <p class="nav-link text-dark"><i class="fa-solid fa-right-to-bracket"></i> Log in</p>
+                <p class="nav-link text-dark"><i class="fas fa-sign-in-alt"></i> Log in</p>
               <% end %>
             </li>
             <% end %>
