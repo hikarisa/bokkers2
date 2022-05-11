@@ -44,7 +44,7 @@
             </li>
             <li class="nav-item">
               <%= link_to destroy_user_session_path do %>
-                <p class="nav-link text-dark"><i class="fas fa-sign-out-alt"></i>Log out</p>
+                <p class="nav-link text-dark"><i class="fas fa-sign-out-alt"></i>Logout</p>
               <% end %>
             </li>
             <% else %>
@@ -60,12 +60,12 @@
             </li>
             <li class="nav-item">
               <%= link_to new_user_registration_path do %>
-                <p class="nav-link text-dark"><i class="fas fa-user-plus"></i> Sign up</p>
+                <p class="nav-link text-dark"><i class="fas fa-user-plus"></i> sign up</p>
               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to user_session_path(@user) do %>
-                <p class="nav-link text-dark"><i class="fas fa-sign-in-alt"></i> Log in</p>
+                <p class="nav-link text-dark"><i class="fas fa-sign-in-alt"></i> Login</p>
               <% end %>
             </li>
             <% end %>
